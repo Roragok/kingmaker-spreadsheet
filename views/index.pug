@@ -1,0 +1,112 @@
+extends layout
+block content
+  main
+    div.container-fluid
+      h1 Kingdom Overview
+      div.row
+        div.col-lg-9.col-md-6.col-12
+          div.kingdom-overview
+            div.row
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Control DC
+                      div.text #{stats.control_dc}
+                    div.col-auto
+                      i.fas.fa-gamepad.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Size
+                      div.text #{stats.size}
+                    div.col-auto
+                      i.fas.fa-weight-scale.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Build Points
+                      div.text #{stats.build_points}
+                    div.col-auto
+                      i.fas.fa-person-digging.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Farms
+                      div.text #{stats.farms}
+                    div.col-auto
+                      i.fas.fa-house-chimney-window.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Roads
+                      div.text #{stats.roads}
+                    div.col-auto
+                      i.fas.fa-road.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Consumption
+                      div.text #{stats.consumption}
+                    div.col-auto
+                      i.fas.fa-utensils.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Unrest
+                      div.text #{stats.unrest}
+                    div.col-auto
+                      i.fas.fa-bomb.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Population
+                      div.text #{stats.population}
+                    div.col-auto
+                      i.fas.fa-city.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Alignment
+                      div.text #{stats.alignment}
+                    div.col-auto
+                      i.fas.fa-scale-unbalanced-flip.fa-2x
+        div.col-lg-3.col-md-6.col-12
+          div.kingdom-stats.card.shadow
+            div.card.border-left-primary.h-100.py-2
+              div.card-body
+                div.row
+                  div.col.mr-2
+                    div.card-title Economy 
+                    div.progress
+                      div.progress-bar.progress-bar-striped.progress-bar-animated(class=`bg-${stats.economy.class}` role="progressbar" style=`width:${stats.economy.value}%` aria-valuenow=stats.economy.value aria-valuemin="0" aria-valuemax=stats.control_dc) #{stats.economy.value}
+                  div.col-auto
+                    i.fas.fa-coins.fa-2x
+            div.card.border-left-primary.h-100.py-2
+              div.card-body
+                div.row
+                  div.col.mr-2
+                    div.card-title Loyalty 
+                    div.progress
+                      div.progress-bar.progress-bar-striped.progress-bar-animated(class=`bg-${stats.loyalty.class}` role="progressbar" style=`width:${stats.loyalty.value}%` aria-valuenow=stats.loyalty.value aria-valuemin="0" aria-valuemax=stats.control_dc) #{stats.loyalty.value}
+                  div.col-auto
+                    i.fas.fa-users.fa-2x
+            div.card.border-left-primary.h-100.py-2
+              div.card-body
+                div.row
+                  div.col.mr-2
+                    div.card-title Stability 
+                    div.progress 
+                      div.progress-bar.progress-bar-striped.progress-bar-animated(class=`bg-${stats.stability.class}` role="progressbar" style=`width:${stats.stability.value}%` aria-valuenow=stats.stability.value aria-valuemin="0" aria-valuemax=stats.control_dc) #{stats.stability.value}
+                  div.col-auto
+                    i.fas.fa-tower-observation.fa-2x
+
+              

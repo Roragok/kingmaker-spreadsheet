@@ -1,0 +1,46 @@
+@font-face{
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-VariableFont.ttf') format("truetype-variations");
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+}
+body{
+  font-family: 'Open Sans', sans-serif!important;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.kingdom-overview .item-wrapper{
+  margin-bottom:.5rem;
+}
+
+
+.kingdom-overview .item{
+  padding: 1rem 1.25rem;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  border-left: .25rem solid #4e73df;
+  height:100%;
+  margin-bottom: .5rem;
+}
+
+.kingdom-overview .item .title{
+  font-size: .75rem;
+  text-transform: uppercase;
+  color: #4e73df;
+  font-weight: 700;
+}
+
+.kingdom-overview .item .text{
+  color: #5a5c69;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.kingdom-overview .item i {
+  color:#dddfeb;
+}
