@@ -1,0 +1,29 @@
+extends layout
+block content
+  main
+    div.container-fluid
+      h1 #{title}
+      div.row
+        each val, index in leadership
+          div.leadership-wrapper.col-lg-4.col-sm-6.col-12
+            div.card
+              div.card-header
+                span.font-weight-bold(title=val.description,data-toggle="tooltip",data-placement="bottom") #{val.title} 
+                | #{val.name}
+              div.card-content
+                img.card-img-top(src=val.img,alt=val.name)
+                div.card-body
+              div.card-footer 
+                if val.mod != "VACANT"
+                  div.benefit
+                    span.font-weight-bold Benefit: 
+                    | #{val.benefit}
+                  div.bonus
+                    span.font-weight-bold Bonus: 
+                    | #{val.mod}
+                else
+                  div.penalty
+                    span.font-weight-bold Penalty: 
+                    | #{val.penalty}
+                  
+              

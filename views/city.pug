@@ -1,0 +1,99 @@
+extends layout
+block content
+  main
+    div.container-fluid
+      h1 #{city.name}
+      div.city-stats.row
+        div.col-lg-9.col-md-6.col-12
+          div.city-overview
+            div.row
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Base Value
+                      div.text #{city.baseValue}
+                    div.col-auto
+                      i.fas.fa-vault.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Purchase Limit
+                      div.text #{city.purchaseLimit}
+                    div.col-auto
+                      i.fas.fa-money-bill-trend-up.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Defense
+                      div.text #{city.defense}
+                    div.col-auto
+                      i.fas.fa-shield.fa-2x
+              div.col-lg-3.col-md-6.col-12.item-wrapper
+                div.item
+                  div.row
+                    div.col.mr-2      
+                      div.title Population
+                      div.text #{city.population}
+                    div.col-auto
+                      i.fas.fa-city.fa-2x
+          div.city-buildings
+            h2 Improvements
+            table.table.table-striped.table-bordered.table-hover 
+              thead.thead-dark
+                tr
+                  th(scope=col) Improvement
+                  th(scope=col) Cost
+                  th(scope=col) Stat
+                  th(scope=col) Bonus
+              tbody
+                each val,index in city.buildings
+                  tr
+                    td(scope=index+1) #{val.name}
+                    td #{val.cost}
+                    td #{val.stat}
+                    td #{val.bonus}
+        div.col-lg-3.col-md-6.col-12
+          div.city-stats.card.shadow
+            div.card.border-left-primary.h-100.py-2
+              div.card-body
+                div.row
+                  div.col.mr-2      
+                    div.title  
+                      span.font-weight-bold Economy: 
+                      span.text.text-monospace #{city.economy}
+                  div.col-auto
+                    i.fas.fa-coins.fa-2x
+            div.card.border-left-primary.h-100.py-2
+              div.card-body
+                div.row
+                  div.col.mr-2      
+                    div.title 
+                      span.font-weight-bold Loyalty: 
+                      span.text.text-monospace #{city.loyalty}
+                  div.col-auto
+                    i.fas.fa-users.fa-2x
+            div.card.border-left-primary.h-100.py-2
+              div.card-body
+                div.row
+                  div.col.mr-2      
+                    div.title
+                      span.font-weight-bold Stability: 
+                      span.text.text-monospace #{city.stability}
+                  div.col-auto
+                    i.fas.fa-tower-observation.fa-2x
+          if city.magicShop
+            div.magic-items
+              h2 Magic Store
+              table.table.table-striped.table-bordered.table-hover 
+                thead.thead-dark
+                  tr
+                    th(scope=col) Name
+                    th(scope=col) Type
+                tbody
+                  each val,index in city.magicShop
+                    tr
+                      td(scope=index+1) #{val.name}
+                      td #{val.type}
