@@ -61,7 +61,7 @@ async function getLeadership() {
       name: sheet.getCellByA1("B13").value,
       mod: sheet.getCellByA1("C13").value,
       stat: sheet.getCellByA1("D13").value,
-      img: "/images/leaders/vacant.jpeg",
+      img: "/images/leaders/deimos.png",
       description: "The ruler is the primary leader of the kingdom.",
       benefit: "A baron or baroness chooses one of a nation’s statistics (Economy, Loyalty, or Stability) and modifies that score by a value equal to the character’s Charisma modifier. A duke or duchess chooses two of these values to modify. A king or queen modifies all three values.",
       penalty: "A kingdom without a ruler cannot claim new hexes, create Farms, build Roads, or purchase settlement districts. Unrest increases by 4 during the kingdom’s Upkeep Phase.",
@@ -94,7 +94,7 @@ async function getLeadership() {
       name: sheet.getCellByA1("B16").value,
       mod: sheet.getCellByA1("C16").value,
       stat: sheet.getCellByA1("D16").value,
-      img: "/images/leaders/vacant.jpeg",
+      img: "/images/leaders/Ja_Rule.png",
       description: "The Grand Diplomat oversees international relations.",
       benefit: "Increase Stability by a value equal to the Grand Diplomat’s Intelligence or Charisma modifier",
       penalty: "Decrease Stability by 2; the kingdom cannot issue Promotion Edicts."
@@ -116,7 +116,7 @@ async function getLeadership() {
       name: sheet.getCellByA1("B18").value,
       mod: sheet.getCellByA1("C18").value,
       stat: sheet.getCellByA1("D18").value,
-      img: "/images/leaders/vacant.jpeg",
+      img: "/images/leaders/nelson.png",
       description: "The Magister guides a kingdom’s higher learning and magic.",
       benefit: "Increase Economy by a value equal to the Magister’s Intelligence or Charisma modifier.",
       penalty: "Economy decreases by 4."
@@ -138,7 +138,7 @@ async function getLeadership() {
       name: sheet.getCellByA1("B20").value,
       mod: sheet.getCellByA1("C20").value,
       stat: sheet.getCellByA1("D20").value,
-      img: "/images/leaders/roy_jones.png",
+      img: "/images/leaders/Gir_Mock.jpeg",
       description: "The Royal Assassin can serve as a public executioner, a headsman, or a shadowy assassin.",
       benefit: "Increase Loyalty by a value equal to the Royal Assassin’s Strength or Dexterity modifier. Fear inspired by the Royal Assassin reduces Unrest by 1 during each Upkeep phase.",
       penalty: "None."
@@ -160,7 +160,7 @@ async function getLeadership() {
       name: sheet.getCellByA1("B22").value,
       mod: sheet.getCellByA1("C22").value,
       stat: sheet.getCellByA1("D22").value,
-      img: "/images/leaders/deimos.png",
+      img: "/images/leaders/roy_jones.png",
       description: "The Treasurer organizes tax collection, and manages the treasury.",
       benefit: "Increase Economy by a value equal to the Treasurer’s Intelligence or Wisdom modifier.",
       penalty: "Reduce Economy by 4; the kingdom cannot collect taxes."
@@ -274,7 +274,8 @@ app.get('/leadership', (req, res) => {
     function(value) {
       res.render('leadership',{
         title: "Leadership Roles",
-        leadership: value
+        leadership: value,
+        vacant: "/images/leaders/vacant.jpeg",
       });
     },
   );

@@ -10,9 +10,11 @@ block content
               div.card-header
                 span.font-weight-bold(title=val.description,data-toggle="tooltip",data-placement="bottom") #{val.title} 
                 | #{val.name}
-              div.card-content
-                img.card-img-top(src=val.img,alt=val.name)
-                div.card-body
+              div.card-body
+                if val.mod != "VACANT"
+                  img.card-img-top(src=val.img,alt=val.name)
+                else
+                  img.card-img-top(src=vacant,alt=val.name)
               div.card-footer 
                 if val.mod != "VACANT"
                   div.benefit
