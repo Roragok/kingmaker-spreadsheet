@@ -301,6 +301,9 @@ app.get('/*', (req, res) => {
     case url = "/plissken":
       city = 5;
       break;
+    case url = "/silverstep":
+      city = 6;
+      break;
 
   }
 
@@ -309,6 +312,7 @@ app.get('/*', (req, res) => {
     data.then(
       function(value) {
         res.render('city',{
+          title: value.name,
           city:  value
         });
       },

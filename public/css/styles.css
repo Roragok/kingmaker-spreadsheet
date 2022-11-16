@@ -59,4 +59,17 @@ body{
 }
 .leadership-wrapper .card{
   margin-bottom: 20px;
+  height: calc(100% - 20px);
+}
+.leadership-wrapper .card-body{
+  flex: 0;
+}
+.leadership-wrapper .card-footer{
+  height: 100%;
+}
+
+@media(max-width:768px){
+  body{
+    font-size: 14px;
+  }
 }

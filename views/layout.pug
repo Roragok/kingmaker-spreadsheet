@@ -5,7 +5,11 @@ html(lang="en")
     link(rel="shortcut icon", href="/images/fav-icon.png")
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(name="theme-color", content="#000000")
-    title Stolen Skunk Water | #{title}
+    if title
+      title #{title} | Stolen Skunk Water
+    else
+      title Stolen Skunk Water
+
     link(href="/css/styles.css", rel="stylesheet")
     link(href="/css/bootstrap.min.css", rel="stylesheet")
     link(href="/css/all.min.css", rel="stylesheet")
@@ -33,6 +37,7 @@ html(lang="en")
                   a.dropdown-item(href="/san-oleg") San Oleg
                   a.dropdown-item(href="/varnhold") Vanhold
                   a.dropdown-item(href="/plissken") Plissken
+                  a.dropdown-item(href="/silverstep") Lake Silverstep Village
               li.nav-item
                 a.nav-link(href="/leadership") Leadership
     block content
