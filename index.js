@@ -304,7 +304,12 @@ app.get('/*', (req, res) => {
     case url = "/silverstep":
       city = 6;
       break;
-
+    case url = "/eagles-nest":
+      city = 7;
+      break;
+    case url = "/fort-drelev":
+      city = 8;
+      break;
   }
 
   if(city){
