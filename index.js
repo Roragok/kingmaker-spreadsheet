@@ -127,7 +127,7 @@ async function getLeadership() {
       name: sheet.getCellByA1("B19").value,
       mod: sheet.getCellByA1("C19").value,
       stat: sheet.getCellByA1("D19").value,
-      img: "/images/leaders/ais.png",
+      img: "/images/leaders/Ais.png",
       description: "The Marshal helps organize patrols and enforces justice in rural and wilderness regions",
       benefit: "Increase Economy by a value equal to the Marshal’s Dexterity or Wisdom modifier.",
       penalty: "Economy decreases by 4."
@@ -149,7 +149,7 @@ async function getLeadership() {
       name: sheet.getCellByA1("B21").value,
       mod: sheet.getCellByA1("C21").value,
       stat: sheet.getCellByA1("D21").value,
-      img: "/images/leaders/Roazario.jpg",
+      img: "/images/leaders/Rozario.jpg",
       description: "The Spymaster observes the kingdom’s underworld and criminal elements and spies on other kingdoms.",
       benefit: "Increase Loyalty, Economy, or Stability (Spymaster’s choice) by a value equal to the Spymaster’s Dexterity or Intelligence modifier. The Spymaster can change which value he modifies during the kingdom’s Improvement phase (but only once per phase)",
       penalty: "Reduce Economy by 4 because of out-of-control crime. Increase Unrest by 1 during each Upkeep phase in which the kingdom has no Spymaster."
