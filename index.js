@@ -245,7 +245,6 @@ function kingdomHealthCheck(stat, controlDC){
 }
 
 const app = express()
-const port = 3031
 
 app.set('view engine', 'pug')
 app.use(express.static('public'));
@@ -327,6 +326,5 @@ app.get('/*any', (req, res) => {
   }
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+
+export default app;
