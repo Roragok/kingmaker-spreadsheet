@@ -7,7 +7,7 @@ import { GoogleSpreadsheet } from 'google-spreadsheet';
 dotenv.config();
 
 
-const doc = new GoogleSpreadsheet('', { apiKey: process.env.API_KEY });
+const doc = new GoogleSpreadsheet('1xU894EjVHLWTeZOEXXiDkdyCiM8-tY6S_3EP6YNaSpo', { apiKey: process.env.API_KEY });
 async function getInfo() {
 
   await doc.loadInfo();
