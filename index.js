@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 dotenv.config();
-console.log("API Key: " + process.env.API_KEY);
 
 
 const doc = new GoogleSpreadsheet('1xU894EjVHLWTeZOEXXiDkdyCiM8-tY6S_3EP6YNaSpo', { apiKey: process.env.API_KEY });
