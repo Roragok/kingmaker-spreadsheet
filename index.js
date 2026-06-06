@@ -4,13 +4,12 @@ const dotenv = require('dotenv');
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 dotenv.config();
+console.log("API Key: " + process.env.API_KEY);
 
 
-const doc = new GoogleSpreadsheet('1xU894EjVHLWTeZOEXXiDkdyCiM8-tY6S_3EP6YNaSpo');
-
+const doc = new GoogleSpreadsheet('1xU894EjVHLWTeZOEXXiDkdyCiM8-tY6S_3EP6YNaSpo', { apiKey: process.env.API_KEY });
 async function getInfo() {
 
-  await doc.useApiKey(process.env.API_KEY);
   await doc.loadInfo();
   let sheet = await doc.sheetsByIndex[0];
   await sheet.loadCells('B1:H23')
@@ -50,7 +49,6 @@ async function getInfo() {
 
 async function getLeadership() {
 
-  await doc.useApiKey(process.env.API_KEY);
   await doc.loadInfo();
   let sheet = await doc.sheetsByIndex[0];
   await sheet.loadCells('A13:D23')
@@ -183,7 +181,6 @@ async function getLeadership() {
 
 async function getCity(index) {
 
-  await doc.useApiKey(process.env.API_KEY);
   await doc.loadInfo();
   let sheet = await doc.sheetsByIndex[index];
   await sheet.loadCells('A2:H30')
@@ -281,7 +278,7 @@ app.get('/leadership', (req, res) => {
   );
 })
 
-app.get('/*', (req, res) => {
+app.get('/*any', (req, res) => {
   let url = req.originalUrl;
   let city = null;
 
