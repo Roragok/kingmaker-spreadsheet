@@ -7,7 +7,7 @@ import { GoogleSpreadsheet } from 'google-spreadsheet';
 dotenv.config();
 
 
-const doc = new GoogleSpreadsheet('1xU894EjVHLWTeZOEXXiDkdyCiM8-tY6S_3EP6YNaSpo', { apiKey: process.env.API_KEY });
+const doc = new GoogleSpreadsheet('', { apiKey: process.env.API_KEY });
 async function getInfo() {
 
   await doc.loadInfo();
@@ -253,7 +253,7 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 
 app.get('/', (req, res) => {
 
-  data = getInfo();
+  const data = getInfo();
 
   data.then(
     function(value) {
@@ -266,7 +266,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/leadership', (req, res) => {
-  data = getLeadership();
+  const data = getLeadership();
   data.then(
     function(value) {
       res.render('leadership',{
@@ -283,37 +283,37 @@ app.get('/*any', (req, res) => {
   let city = null;
 
   switch(url){
-    case url = "/stags-end":
+    case "/stags-end":
       city = 1;
       break;
-    case url = "/tatlzford":
+    case "/tatlzford":
       city = 2;
       break;
-    case url = "/san-oleg":
+    case "/san-oleg":
       city = 3;
       break;
-    case url = "/varnhold":
+    case "/varnhold":
       city = 4;
       break;
-    case url = "/plissken":
+    case "/plissken":
       city = 5;
       break;
-    case url = "/silverstep":
+    case "/silverstep":
       city = 6;
       break;
-    case url = "/eagles-nest":
+    case "/eagles-nest":
       city = 7;
       break;
-    case url = "/fort-drelev":
+    case "/fort-drelev":
       city = 8;
       break;
-    case url = "/toknik-rat":
+    case "/toknik-rat":
       city = 9;
       break;
   }
 
   if(city){
-    data = getCity(city);
+    const data = getCity(city);
     data.then(
       function(value) {
         res.render('city',{
