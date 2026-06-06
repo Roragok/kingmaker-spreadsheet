@@ -1,8 +1,9 @@
-const express = require('express')
-const path = require('path')
-const dotenv = require('dotenv');
+import express from 'express';
+import path from 'path';
+import dotenv from 'dotenv';
 
-const { GoogleSpreadsheet } = require('google-spreadsheet');
+import { GoogleSpreadsheet } from 'google-spreadsheet';
+
 dotenv.config();
 
 
@@ -247,7 +248,8 @@ function kingdomHealthCheck(stat, controlDC){
 const app = express()
 
 app.set('view engine', 'pug')
-app.use(express.static('public'));
+app.set('views', path.join(process.cwd(), 'views'));
+app.use(express.static(path.join(process.cwd(), 'public')));
 
 app.get('/', (req, res) => {
 
